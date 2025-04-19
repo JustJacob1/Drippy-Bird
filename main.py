@@ -51,7 +51,7 @@ while is_running:
         if pipe_data["x"] <-pipe_width
             pipe_data['x'] = max(p["x"])
             pipe_data["y_offset"] = random.randint(-150,0)
-        backround.blit(pipe,(pipe_data["x"], pipe_data"y_offset"])
+        backround.blit([pipe,(pipe_data["x"], pipe_data"y_offset"])
         bottom_pipe = pygame.transform.flip(pipe,False,True)
         bottom_y = pipe_data["y_offset"] + pipe_height + pipe_gap
         backround.blit(bottom_pipe(pipe_data["x"], bottom_y))

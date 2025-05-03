@@ -1,5 +1,6 @@
 import pygame
 import random
+from pipe import Pipe
 pygame.init()
 screen = pygame.display.set_mode((400,600))
 clock = pygame.time.Clock()
@@ -12,6 +13,11 @@ y_axis = 0
 backround = pygame.image.load("Photos/bg.png").convert_alpha()
 backround = pygame.transform.scale(backround, [400,600])
 backround = backround.get_rect()
+
+green_pipe = Pipe(200)
+
+
+
 
 is_running =  True
 while is_running:
@@ -39,5 +45,6 @@ while is_running:
 
     screen.fill("white")
     screen.blit(player, player_pos)
+    green_pipe.update(screen)
     pygame.display.flip()
     clock.tick(60)

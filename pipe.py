@@ -1,6 +1,7 @@
 import pygame
 import random
 class Pipe:
+    points = 0
     def __init__(self, x):
         self.image = pygame.image.load("Photos/Pipe.png")
         self.image = pygame.transform.scale(self.image,[300, 500])
@@ -20,7 +21,7 @@ class Pipe:
         screen.blit(self.image_clone, self.collision_2)
         
         # Teleports the pipe back to the right side of the screen to make it look like a new pipe has entered the view of the screen
-        if self.collision.x <= -185:
+        if self.collision.right <= 0:
             # sets the x back to 700 to the right side of the screen
             self.collision.x = 700 
             # sets the y at a random location
@@ -28,9 +29,11 @@ class Pipe:
             
             self.collision_2.x = 700
             self.collision_2.y = self.collision.y - 600
+            Pipe.points += 1
         
             
         # moves the x by movement value  
         self.collision.x -= self.movement
         self.collision_2.x -= self.movement
         
+            

@@ -8,7 +8,7 @@ clock = pygame.time.Clock()
 player = pygame.image.load('Photos/West.png').convert_alpha()
 player = pygame.transform.smoothscale(player, [100,100])
 player = player.subsurface(player.get_bounding_rect())
-player_pos = player.get_rect( topleft = [0,225])
+player_pos = player.get_rect(topleft = [0,225])
 y_axis = 0
 backround = pygame.image.load("Photos/bg.png").convert_alpha()
 backround = pygame.transform.scale(backround, [400,600])
@@ -49,7 +49,7 @@ while is_running:
 
     screen.fill("white")
     screen.blit(player, player_pos)
-    green_pipe.update(screen)
+    green_pipe.update(screen, player_pos)
     text = Font.render(f"points {Pipe.points}", True, "Black")
     screen.blit(text,[0,0])
     pygame.display.flip()

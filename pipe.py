@@ -6,7 +6,9 @@ class Pipe:
         self.image = pygame.image.load("Photos/Pipe.png")
         self.image = pygame.transform.scale(self.image,[300, 500])
         self.image_clone = pygame.transform.flip(self.image,False,True)
-        self.collision_2 = self.image_clone.get_rect()
+        self.collision = self.image_clone.get_rect().inflate(-50,-50)
+        self.collision_2 = self.image_clone.get_rect().inflate(-50,-50)
+        print(self.collision_2.bottom)
         self.collision = self.image.get_rect()
         self.movement = 5
         self.collision.y = random.randint(175,450)
@@ -17,7 +19,8 @@ class Pipe:
     
     def pipe_collide(self, kanye):
         if kanye.colliderect(self.collision) or kanye.colliderect(self.collision_2):
-            print("Colliding")
+           print("Colliding ")
+      
             
         
        

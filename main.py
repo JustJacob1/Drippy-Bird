@@ -7,7 +7,8 @@ clock = pygame.time.Clock()
 
 player = pygame.image.load('Photos/West.png').convert_alpha()
 player = pygame.transform.smoothscale(player, [100,100])
-player = player.subsurface(player.get_bounding_rect().inflate(-10,-10)) #use inflate(x,y) to change bounding box size
+player = player.subsurface(player.get_bounding_rect().inflate(0,0)) #use inflate(x,y) to change bounding box size
+pygame.image.save(player, "player.png")
 player_pos = player.get_rect(topleft = [0,225])
 print(player.get_width())
 print(player.get_height())

@@ -2,11 +2,15 @@ import pygame
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1800, 1100))
+screen = pygame.display.set_mode((1500, 800))
 clock = pygame.time.Clock()
 running = True
 
-
+backround_image = pygame.image.load("Photos/bg_space.jpg").convert_alpha()
+backround_image = pygame.transform.scale(backround_image, [1500,800])
+backround_rect = backround_image.get_rect()
+Astroid = pygame.image.load("Photos/Astroid.png").convert_alpha()
+Astroid = pygame.transform.scale(Astroid, [80,80])
 
 player = pygame.Vector2(1800, 1100)/2
 Angle = 220
@@ -23,8 +27,8 @@ while running:
     speed.x += keys[pygame.K_UP] - keys[pygame.K_DOWN]
     speed*= 0.7
     player += speed.rotate(Angle)
-    # fill the screen with a color to wipe away anything from last frame
-    screen.fill("gray15")
+    screen.blit(backround_image, backround_rect)
+    screen.blit(Astroid)
     pygame.draw.circle(screen, "white", player, 15)
     pygame.draw.line(screen, "white", player, player+pygame.Vector2(20, 0).rotate(Angle))
     # RENDER YOUR GAME HERE

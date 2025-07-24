@@ -42,6 +42,7 @@ while running:
     player += speed.rotate(Angle)
     screen.blit(backround_image, backround_rect)
     screen.blit(Astroid, backround_rect)
+
     pygame.draw.circle(screen, "white", player, 15)
     pygame.draw.line(screen, "white", player, player+pygame.Vector2(20, 0).rotate(Angle))
     # RENDER YOUR GAME HERE

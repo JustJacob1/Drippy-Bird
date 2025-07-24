@@ -23,8 +23,6 @@ for _ in range(10):
 
 
 
-
-
 player = pygame.Vector2(1800, 1100)/2
 Angle = 220
 speed = pygame.Vector2()
@@ -42,7 +40,6 @@ while running:
     player += speed.rotate(Angle)
     screen.blit(backround_image, backround_rect)
     screen.blit(Astroid, backround_rect)
-
     pygame.draw.circle(screen, "white", player, 15)
     pygame.draw.line(screen, "white", player, player+pygame.Vector2(20, 0).rotate(Angle))
     # RENDER YOUR GAME HERE
@@ -53,3 +50,5 @@ while running:
     clock.tick(60)  # limits FPS to 60
 
 pygame.quit()
+
+        

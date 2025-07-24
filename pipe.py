@@ -20,7 +20,7 @@ class Pipe:
         if kanye.colliderect(self.collision) or kanye.colliderect(self.collision_2):
            pygame.quit()
       
-            
+    
         
        
         

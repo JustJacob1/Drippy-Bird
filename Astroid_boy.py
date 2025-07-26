@@ -17,6 +17,7 @@ astroid_list = []
 for _ in range(10):
     asteroid = Asteroid(Astroid, 1500, 800)
     astroid_list.append(asteroid)
+    
 
 
 
@@ -41,7 +42,10 @@ while running:
     speed*= 0.7
     player += speed.rotate(Angle)
     screen.blit(backround_image, backround_rect)
-    screen.blit(Astroid, backround_rect)
+    for asteroid in astroid_list:
+        asteroid.draw(screen)
+
+    
     pygame.draw.circle(screen, "white", player, 15)
     pygame.draw.line(screen, "white", player, player+pygame.Vector2(20, 0).rotate(Angle))
     # RENDER YOUR GAME HERE

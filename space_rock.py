@@ -14,3 +14,6 @@ class Asteroid:
 
     def move(self):
         self.rect.y += self.speed
+
+       # if self.rect.top > 800:  
+        #    self.rect.x = random.randint(0, 1500 - self.rect.width)

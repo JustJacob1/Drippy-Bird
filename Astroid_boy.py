@@ -24,8 +24,6 @@ for _ in range(10):
 
 
 
-
-
 player = pygame.Vector2(1800, 1100)/2
 Angle = 220
 speed = pygame.Vector2()
@@ -56,3 +54,5 @@ while running:
     clock.tick(60)  # limits FPS to 60
 
 pygame.quit()
+
+        

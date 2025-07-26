@@ -41,6 +41,7 @@ while running:
     player += speed.rotate(Angle)
     screen.blit(backround_image, backround_rect)
     for asteroid in astroid_list:
+        asteroid.move()
         asteroid.draw(screen)
 
     
